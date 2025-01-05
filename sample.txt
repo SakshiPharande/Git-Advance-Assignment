@@ -1,0 +1,2 @@
+This is a sample file.
+Updated content for feature branch.
