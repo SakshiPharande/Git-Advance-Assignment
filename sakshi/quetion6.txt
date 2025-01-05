@@ -1,0 +1,4 @@
+Q. Why is it not possible to create two branches with the names `fix` and `fix/bug` in a Git repository, and what causes this conflict?
+*****************************************************************************************************************
+
+In Git you cannot create two branches with the names fix and fix/bug due to how Git handles branch names and their underlying representation in the file system. Specifically, Git treats slashes (/) as directory separators, which leads to conflicts when trying to create a branch that is structured as a subdirectory of an existing branch
