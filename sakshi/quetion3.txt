@@ -1,0 +1,24 @@
+Q. What happens when a file is deleted in the main branch and updated in a feature branch, and how is this handled during a merge?
+**************************************************************************************************************
+
+When a file is deleted in the main branch and updated in a feature branch, the behavior during a merge depends on how Git handles the differences between the branches. Here’s what happens:
+File Deletion in Main: If a file is deleted in the main branch (let's call it main) and that same file has been modified in a feature branch (let's call it feature), Git will recognize that the file exists in one branch and has been deleted in another.
+Merge Behavior: During the merge process, if you attempt to merge feature into main, Git will typically delete the file from the main branch because it sees that the file was deleted in main. However, if there are changes made to that file in feature, this can lead to a merge conflict.
+Conflict Resolution: In such cases, you will need to resolve the conflict manually. You can choose to either keep the changes from feature or accept the deletion from main.
+
+
+To resolve a merge conflict where a file has been deleted in one branch (in this case, main) and modified in another branch (the feature branch), you need to decide whether to keep the modified version of the file or accept the deletion. Here’s how to handle this situation step by step.
+Steps to Resolve the Conflict
+
+Check the Status:
+First, confirm the status of your repository to see which files are in conflict:
+bash
+git status
+
+Identify the Conflict:
+You will see that sample.txt is marked as "deleted by us" (meaning deleted in main) and "modified in feature" (meaning it has changes in the feature branch).
+
+Decide on the Resolution:
+You have two options:
+Keep the modified version from feature: If you want to keep the changes made in feature, you should restore the modified version of sample.txt.
+Accept the deletion: If you want to go with the deletion from main, you can simply remove it from your working directory.
